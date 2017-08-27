@@ -11,7 +11,7 @@
     <div class="vm-progress-bar" v-if="type === 'line'">
       <div class="vm-progress-bar__outer" :style="{ height: strokeWidth + 'px', backgroundColor: trackColor }">
         <div class="vm-progress-bar__inner" :style="barStyle">
-          <div class="vm-progress-bar__innerText" v-if="showText && textInside">{{percentage}}%</div>
+          <div class="vm-progress-bar__innerText" v-if="showText && textInside"><slot>{{percentage}}%</slot></div>
         </div>
       </div>
     </div>
@@ -27,7 +27,7 @@
          v-if="showText && !textInside"
          ref="progressText"
          :style="{ fontSize: progressTextSize + 'px' }">
-      <template v-if="!st || strokeColor">
+      <template v-if="!st || strokeColor || $slots.default">
         <slot>{{percentage}}%</slot>
       </template>
       <i v-else :class="iconClass"></i>
