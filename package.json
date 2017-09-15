@@ -1,7 +1,7 @@
 {
   "name": "vue-multiple-progress",
   "description": "Vue-based progress component",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "vue-multiple",
   "main": "lib/progress.js",
   "files": [
@@ -15,7 +15,8 @@
     "demo:dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot --config ./build/webpack.example.dev.conf.js",
     "demo:build": "rm -rf ./example/dist && cross-env NODE_ENV=production webpack --config ./build/webpack.example.prod.conf.js",
     "demo:prepublish": "rm -rf ./gh-pages && cross-env NODE_ENV=prepublish webpack --config ./build/webpack.example.prod.conf.js",
-    "deploy": "bash ./build/gh-pages.sh"
+    "deploy": "bash ./build/gh-pages.sh",
+    "test": "echo 'comming soon...'"
   },
   "repository": {
     "type": "git",
