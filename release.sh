@@ -1,6 +1,3 @@
-git checkout master
-git merge dev
-
 #!/usr/bin/env sh
 #如果指令传回值不等于0，则立即退出shell。
 set -e
@@ -26,4 +23,7 @@ then
   git push origin refs/tags/v$VERSION
   git push
   npm publish
+
+  #deploy
+  bash ./build/gh-pages.sh
 fi

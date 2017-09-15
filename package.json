@@ -16,6 +16,7 @@
     "demo:build": "rm -rf ./example/dist && cross-env NODE_ENV=production webpack --config ./build/webpack.example.prod.conf.js",
     "demo:prepublish": "rm -rf ./gh-pages && cross-env NODE_ENV=prepublish webpack --config ./build/webpack.example.prod.conf.js",
     "deploy": "bash ./build/gh-pages.sh",
+    "release": "bash ./release.sh",
     "test": "echo 'comming soon...'"
   },
   "repository": {
