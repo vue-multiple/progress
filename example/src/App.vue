@@ -43,6 +43,24 @@
       </template>
     </demonstration>
     <demonstration
+        title="线形进度条 — 渐变条纹"
+        anchor="xian-xing-jin-du-tiao-bai-fen-bi-wai-xian"
+        :highlight="sourcecodeD">
+      <template slot="source">
+        <vm-button class="btn-striped" type="info" @click="striped=!striped">切换条纹</vm-button>
+        <vm-progress :percentage="0" :text-inside="true" :stroke-width="18" :striped="striped"></vm-progress>
+        <vm-progress :percentage="70" :text-inside="true" :stroke-width="18" :striped="striped"></vm-progress>
+        <vm-progress :percentage="30" :text-inside="true" :stroke-width="18" strokeColor="purple" :striped="striped"></vm-progress>
+        <vm-progress :percentage="30" :text-inside="true" :stroke-width="18" status="exception" :striped="striped"></vm-progress>
+        <vm-progress :percentage="50" :text-inside="true" :stroke-width="18" status="info" :striped="striped"></vm-progress>
+        <vm-progress :percentage="80" :text-inside="true" :stroke-width="18" status="warning" :striped="striped"></vm-progress>
+        <vm-progress :percentage="100" :text-inside="true" :stroke-width="18" status="success" :striped="striped"></vm-progress>
+      </template>
+      <template slot="explanation">
+        <code>Progress</code> 组件设置 <code>striped</code> 属性即可，表示进度条是否添加条纹渐变动画，还可以通过 `linear-class-name` 定义自己的进度动画。
+      </template>
+    </demonstration>
+    <demonstration
         title="环形进度条"
         anchor="huan-xing-jin-du-tiao"
         :multiple="true"
@@ -89,6 +107,20 @@
           </tr>
           </thead>
           <tbody>
+          <tr>
+            <td>striped <i class="vd-demo__new">（新增）</i></td>
+            <td>是否为进度添加条纹渐变动画</td>
+            <td>boolean</td>
+            <td>—</td>
+            <td>false</td>
+          </tr>
+          <tr>
+            <td>linear-class-name <i class="vd-demo__new">（新增）</i></td>
+            <td>进度渐变类名</td>
+            <td>string</td>
+            <td>—</td>
+            <td>—</td>
+          </tr>
           <tr>
             <td><strong>percentage</strong></td>
             <td><strong>百分比（必填）</strong></td>
@@ -197,7 +229,7 @@
 </template>
 
 <script>
-  import { sourcecodeA, sourcecodeB, sourcecodeC } from './template'
+  import { sourcecodeA, sourcecodeB, sourcecodeC, sourcecodeD } from './template'
 
   export default {
     data () {
@@ -205,7 +237,9 @@
         sourcecodeA,
         sourcecodeB,
         sourcecodeC,
-        percentage: 70
+        sourcecodeD,
+        percentage: 70,
+        striped: true
       }
     },
     methods: {
@@ -230,5 +264,8 @@
       width: 350px;
       margin-bottom: 15px;
     }
+  }
+  .btn-striped {
+    margin-bottom: 20px;
   }
 </style>

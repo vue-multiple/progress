@@ -54,3 +54,22 @@ export const sourcecodeC = `<template>
     }
   }
 </script>`
+
+export const sourcecodeD = `<vm-button class="btn-striped" type="info" @click="striped=!striped">切换条纹</vm-button>
+<vm-progress :percentage="0" :text-inside="true" :stroke-width="18" :striped="striped"></vm-progress>
+<vm-progress :percentage="70" :text-inside="true" :stroke-width="18" :striped="striped"></vm-progress>
+<vm-progress :percentage="30" :text-inside="true" :stroke-width="18" strokeColor="purple" :striped="striped"></vm-progress>
+<vm-progress :percentage="30" :text-inside="true" :stroke-width="18" status="exception" :striped="striped"></vm-progress>
+<vm-progress :percentage="50" :text-inside="true" :stroke-width="18" status="info" :striped="striped"></vm-progress>
+<vm-progress :percentage="80" :text-inside="true" :stroke-width="18" status="warning" :striped="striped"></vm-progress>
+<vm-progress :percentage="100" :text-inside="true" :stroke-width="18" status="success" :striped="striped"></vm-progress>
+
+<script>
+  export default {
+    data () {
+      return {
+        striped: true
+      }
+    }
+  }
+</script>`
