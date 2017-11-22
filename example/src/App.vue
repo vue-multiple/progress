@@ -266,18 +266,18 @@
         sourcecodeB,
         sourcecodeC,
         sourcecodeD,
-        percentage: 70,
+        percentage: '70',
         striped: true
       }
     },
     methods: {
       increase () {
         if (this.percentage === 100) return
-        this.percentage += 10
+        this.percentage = parseInt(this.percentage, 10) + 10
       },
       decrease () {
         if (this.percentage === 0) return
-        this.percentage -= 10
+        this.percentage = parseInt(this.percentage, 10) - 10
       }
     }
   }

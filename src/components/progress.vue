@@ -49,7 +49,7 @@
         }
       },
       percentage: {
-        type: Number,
+        type: [Number, String],
         default: 0,
         required: true,
         validator: val => {
