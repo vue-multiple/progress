@@ -13,7 +13,8 @@ npm install vue-multiple-progress -S
 ```bash
 import Vue from 'vue'
 import Progress from 'vue-multiple-progress'
-Vue.use('VmProgress', Progress)
+# Vue.component('vm-progress', Progress) # 可以指定组件名称
+Vue.use(Progress) # 组件名称 `vm-progress`
 ```
 
 For more information, please refer to [Progress](https://vue-multiple.github.io/progress) in our documentation.

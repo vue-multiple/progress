@@ -10,4 +10,6 @@ if (typeof window !== 'undefined' && window.Vue) {
   Vue.component('VmProgress', Progress)
 }
 
+Progress.install = install
+
 export default Progress

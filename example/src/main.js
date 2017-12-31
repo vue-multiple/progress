@@ -2,7 +2,8 @@ import Vue from 'vue'
 import App from './App.vue'
 
 import Progress from '../../src/index.js'
-Vue.component(Progress.name, Progress)
+// Vue.component('vm-progress', Progress)
+Vue.use(Progress)
 
 import VueDemonstration from 'vue-demonstration'
 Vue.component('demonstration', VueDemonstration)
