@@ -57,7 +57,7 @@
         }
       },
       strokeWidth: {
-        type: [Number,String],
+        type: [Number, String],
         default: 6
       },
       strokeLinecap: {
