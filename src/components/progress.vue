@@ -115,6 +115,9 @@
       percentage (newVal) {
         if (this.$slots.default) return
         this.st = newVal === 100 ? 'success' : this.status
+      },
+      status (newVal) {
+        this.st = newVal
       }
     },
 
