@@ -107,3 +107,41 @@ export const sourcecodeD = `<vm-button class="btn-striped" type="info" @click="s
     }
   }
 </script>`
+
+export const sourcecodeE = `<div class="vd-demo__block vd-demo__block-2">
+<vm-progress type="circle" :percentage="70" :status="status"></vm-progress>
+</div>
+<div class="vd-demo__block vd-demo__block-2">
+<vm-button-group>
+  <vm-button type="default" @click="status = 'exception'">错误</vm-button>
+  <vm-button type="default" @click="status = 'info'">信息</vm-button>
+  <vm-button type="default" @click="status = 'warning'">警告</vm-button>
+  <vm-button type="default" @click="status = 'success'">成功</vm-button>
+</vm-button-group>
+<vm-button-group>
+  <vm-button type="default" @click="increase">增加</vm-button>
+  <vm-button type="default" @click="decrease">减少</vm-button>
+</vm-button-group>
+</div>
+
+<script>
+  export default {
+    data () {
+      return {
+        percentage: 70,
+        status: 'info'
+      }
+    },
+    methods: {
+      increase () {
+        if (this.percentage === 100) return
+        this.percentage += 10
+      },
+      decrease () {
+        if (this.percentage === 0) return
+        this.percentage -= 10
+      }
+    }
+  }
+</script>
+`

@@ -120,6 +120,33 @@
       </template>
     </demonstration>
     <demonstration
+        title="状态切换"
+        anchor="huan-xing-jin-du-tiao"
+        :multiple="true"
+        :highlight="sourcecodeE">
+      <template slot="source">
+        <div class="vd-demo__block vd-demo__block-2">
+          <vm-progress type="circle" :percentage="percentage" :status="status"></vm-progress>
+        </div>
+        <div class="vd-demo__block vd-demo__block-2">
+          <vm-button-group>
+            <vm-button type="default" @click="status = 'exception'">错误</vm-button>
+            <vm-button type="default" @click="status = 'info'">信息</vm-button>
+            <vm-button type="default" @click="status = 'warning'">警告</vm-button>
+            <vm-button type="default" @click="status = 'success'">成功</vm-button>
+          </vm-button-group>
+          <vm-button-group>
+            <vm-button type="default" @click="increase">增加</vm-button>
+            <vm-button type="default" @click="decrease">减少</vm-button>
+          </vm-button-group>
+        </div>
+      </template>
+      <template slot="explanation">
+        <code>Progress</code> 组件可通过 <code>type</code> 属性来指定使用环形进度条，在环形进度条中，还可以通过 <code>width</code> 属性来设置其大小。通过 <code>reverse</code>
+        设置进度方向（逆时针，顺时针），还可以定义显示内容。
+      </template>
+    </demonstration>
+    <demonstration
         title="Attributes"
         anchor="attributes"
         :show-content="false">
@@ -257,7 +284,7 @@
 </template>
 
 <script>
-  import { sourcecodeA, sourcecodeB, sourcecodeC, sourcecodeD } from './template'
+  import { sourcecodeA, sourcecodeB, sourcecodeC, sourcecodeD, sourcecodeE } from './template'
 
   export default {
     data () {
@@ -266,7 +293,9 @@
         sourcecodeB,
         sourcecodeC,
         sourcecodeD,
+        sourcecodeE,
         percentage: '70',
+        status: 'info',
         striped: true
       }
     },
